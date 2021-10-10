@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  adhan_api:
+    build: .
+    image: adhan-api
+    environment:
+      - PORT=${PORT:-3000}
+      - MONGO_URI=mongodb://mongodb/adhan-api
+      - SECRET=teehee
+      - WAIT_HOSTS=mongodb:27017
+    ports:
+      - "3000:${PORT:-3000}"
+    depends_on:
+      - mongodb
+  mongoku:
+    image: huggingface/mongoku:1.3.0
+    environment:
+      - MONGOKU_DEFAULT_HOST=mongodb://@mongodb:27017
+    ports:
+    - "3100:3100"
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:4
