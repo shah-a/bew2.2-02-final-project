@@ -1,6 +1,6 @@
 FROM node:15-slim
 WORKDIR /app
-COPY package*.json /app
+COPY package*.json /app/
 RUN npm ci
 COPY src/ src/
 EXPOSE 3000

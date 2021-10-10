@@ -77,13 +77,13 @@ Note: The `PORT` variable specifies which port the app's container will use inte
 From the project's root directory, build the container:
 
 ```bash
-docker build -t adhan-api-image .
+$ docker build -t adhan-api-image .
 ```
 
 Run the container:
 
 ```bash
-docker run -it --rm -p 3000:3000 \
+$ docker run -it --rm -p 3000:3000 \
 --name adhan-api-container \
 -e "PORT=3000" \
 -e "MONGO_URI=your_mongo_uri" \
@@ -130,7 +130,7 @@ You may need to add an exception to your server's firewall rules for it to recei
 
 For example, on an Ubuntu server, you might do:
 
-```
+```bash
 $ ssh root@123.123.123.123
 ```
 
