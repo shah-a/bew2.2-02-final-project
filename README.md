@@ -99,6 +99,8 @@ For example, if you're running a mongo container like this:
 $ docker run -d --rm --name mongo mongo:4
 ```
 
+(or, for persistent data, with the additional option: `-v mongo:/data/db`)
+
 Then you might set your env variables (and a `--link` option) like this:
 
 ```bash
